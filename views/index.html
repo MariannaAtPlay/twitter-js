@@ -1,10 +1,7 @@
 <h1>{{ title }}</h1>
-<!-- {{ this is a variable }} -->
 <p>This is a bare-bones template.</p>
 <ul>
 {% for person in people %}
   <li>{{ person.name }}</li>
 {% endfor %}
-<!-- {% ...logic tags... %} -->
-<!-- when we pass Nunjucks some data to render this view with (which we call the local variables), it will interpolate the values we want. -->
 </ul>
