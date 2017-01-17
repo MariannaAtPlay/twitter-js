@@ -40,6 +40,7 @@ for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
-console.log(module.exports.find(function(){
-  return data['name'].slice(0,4) === "Kate";
+console.log(module.exports.find(function(tweetObj, index, collection){
+  return tweetObj.content.includes('amazing');
+
 }));
