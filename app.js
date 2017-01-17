@@ -1,6 +1,8 @@
 const express = require('express');
 const volleyball = require('volleyball'); 
 const nunjucks = require('nunjucks');
+const routes = require('./routes/');
+
 // app = require('express')();
 
 const app = express();
@@ -23,17 +25,18 @@ app.use(function (req, res, next) {
 })
 
 app.use(volleyball);
+app.use('/', routes);
 
 
-const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Grace Hopper'}];
-app.get('/', function(req, res, next){
-  res.render( 'index', {title: 'Hall of Fame', people: people} );
-})
+// const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Grace Hopper'}];
+// app.get('/', function(req, res, next){
+//   res.render( 'index', {title: 'Hall of Fame', people: people} );
+// })
 
-// another route for when client is trying to reach localhost:3000/news
-app.get('/news', function(req, res, next){
-  res.send("hooray for news");
-})
+// // another route for when client is trying to reach localhost:3000/news
+// app.get('/news', function(req, res, next){
+//   res.send("hooray for news");
+// })
 
 
 app.set('view engine', 'html'); // have res.render work with html files
